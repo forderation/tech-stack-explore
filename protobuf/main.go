@@ -38,7 +38,7 @@ func main() {
 		},
 	}
 
-	_ = &model.GarageListByUser{
+	garageListByUser := &model.GarageListByUser{
 		List: map[string]*model.GarageList{
 			user1.Id: garageList,
 		},
@@ -68,4 +68,13 @@ func main() {
 	}
 
 	fmt.Printf("\n\n#=== As string from JSON -> Proto\n %v \n", protoObject.String())
+
+	// ======= Convert proto with list mapping into json
+	var buf3 bytes.Buffer
+	err3 := (&jsonpb.Marshaler{}).Marshal(&buf3, garageListByUser)
+	if err3 != nil {
+		panic(err3)
+	}
+	fmt.Printf("\n\n#=== As protobuf list map into JSON\n %v \n", buf3.String())
+
 }
