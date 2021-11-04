@@ -21,4 +21,20 @@ message GarageListByUser {
     map<string, GarageList> list = 1;
 }
 
+message GarageUserId {
+    string user_id = 1;
+}
+
+message GarageAndUserId {
+    string user_id = 1;
+    Garage garage = 2;
+}
+
+import "google/protobuf/Empty.proto";
+
+service Garages {
+    rpc List(GarageUserId) returns (GarageList) {}
+    rpc Add(GarageAndUserId) returns (google.protobuf.Empty) {}
+}
+
 option go_package = "/model";
