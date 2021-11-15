@@ -1,0 +1,8 @@
+{ "index":{"_index": "students" } }
+{ "name":"john doe","age":18, "average_score":77.7 }
+{ "index":{"_index": "students" } }
+{ "name":"bob","age":16, "average_score":65.5 }
+{ "index":{"_index": "students" } }
+{ "name":"mary doe","age":18, "average_score":97.7 }
+{ "index":{"_index": "students" } }
+{ "name":"eve","age":15, "average_score":98.9 }
